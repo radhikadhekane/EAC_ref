@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EAC Clinical Reference — Esophageal Adenocarcinoma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & TOKENS ───────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:    #0B1F3A;
+  --navy2:   #122844;
+  --navy3:   #1A3357;
+  --teal:    #0F8A7C;
+  --teal-l:  #14B5A3;
+  --teal-xl: #5DDDD0;
+  --amber:   #E8872A;
+  --amber-l: #F4A94A;
+  --coral:   #D94F3D;
+  --coral-l: #EE7060;
+  --purple:  #7C5CBF;
+  --purple-l:#A07FD8;
+  --green:   #1A7A4A;
+  --green-l: #2CAD6A;
+  --slate:   #4A6680;
+  --slate-l: #7A9AB5;
+  --off:     #F0F4F7;
+  --offb:    #E4EBF1;
+  --white:   #FFFFFF;
+  --text:    #0B1F3A;
+  --text2:   #3A526A;
+  --text3:   #6A88A0;
+  --border:  rgba(11,31,58,0.12);
+  --border2: rgba(11,31,58,0.06);
+  --warn-bg: #FFF8E6;
+  --warn-br: #E8872A;
+  --info-bg: #EAF6F5;
+  --info-br: #0F8A7C;
+
+  --sans: 'DM Sans', sans-serif;
+  --serif: 'DM Serif Display', serif;
+  --mono: 'DM Mono', monospace;
+
+  --radius: 8px;
+  --radius-lg: 14px;
+  --shadow: 0 2px 12px rgba(11,31,58,0.08);
+  --shadow-lg: 0 8px 32px rgba(11,31,58,0.12);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--off);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* ─── UTILITY ──────────────────────────────────────────── */
+.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
+.container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.tag-teal   { background: #D4F5F1; color: #0A5E55; }
+.tag-amber  { background: #FEF0DD; color: #9A5510; }
+.tag-coral  { background: #FCE8E5; color: #9A2E22; }
+.tag-purple { background: #EDE7FA; color: #4D3580; }
+.tag-green  { background: #E0F5EC; color: #0F4E2E; }
+.tag-slate  { background: #E4EBF1; color: #2E4A60; }
+.tag-navy   { background: var(--navy); color: var(--white); }
+
+/* ─── HEADER ───────────────────────────────────────────── */
+#site-header {
+  background: var(--navy);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  height: 56px;
+}
+.site-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--white);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-title span { color: var(--teal-l); }
+.site-nav {
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.site-nav::-webkit-scrollbar { display: none; }
+.nav-btn {
+  background: none;
+  border: none;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.nav-btn:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+.nav-btn.active { color: var(--teal-xl); background: rgba(15,138,124,0.18); }
+
+/* ─── HERO ─────────────────────────────────────────────── */
+#hero {
+  background: var(--navy);
+  padding: 64px 0 52px;
+  position: relative;
+  overflow: hidden;
+}
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(15,138,124,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal-l);
+  margin-bottom: 16px;
+}
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 5vw, 52px);
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.hero-title em { font-style: italic; color: var(--teal-xl); }
+.hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.hero-badge {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid;
+}
+.hb-teal   { border-color: var(--teal-l); color: var(--teal-xl); }
+.hb-amber  { border-color: var(--amber);  color: var(--amber-l); }
+.hb-slate  { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.45); }
+
+/* ─── SECTION BASE ──────────────────────────────────────── */
+.section {
+  padding: 64px 0;
+}
+.section + .section { padding-top: 0; }
+.section-header {
+  margin-bottom: 36px;
+}
+.section-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 8px;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 34px);
+  color: var(--navy);
+  line-height: 1.2;
+}
+.section-sub {
+  color: var(--text2);
+  margin-top: 8px;
+  max-width: 680px;
+  font-size: 15px;
+}
+
+/* ─── CARDS ─────────────────────────────────────────────── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+.card-grid {
+  display: grid;
+  gap: 16px;
+}
+.card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.card-grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card-grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+.card-title {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.card-body {
+  font-size: 13.5px;
+  color: var(--text2);
+  line-height: 1.65;
+}
+
+/* ─── STAT CARDS ────────────────────────────────────────── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.stat-card {
+  background: var(--navy);
+  border-radius: var(--radius-lg);
+  padding: 20px 18px;
+  text-align: center;
+}
+.stat-value {
+  font-family: var(--serif);
+  font-size: 36px;
+  color: var(--teal-xl);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.4;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ─── STAGING SECTION ───────────────────────────────────── */
+.stage-nav {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.stage-btn {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: var(--text2);
+  transition: all 0.15s;
+}
+.stage-btn:hover { border-color: var(--teal); color: var(--teal); }
+.stage-btn.active { background: var(--teal); border-color: var(--teal); color: var(--white); }
+
+.stage-panel { display: none; }
+.stage-panel.active { display: grid; grid-template-columns: 280px 1fr; gap: 24px; align-items: start; }
+@media (max-width: 700px) { .stage-panel.active { grid-template-columns: 1fr; } }
+
+/* Wall schematic */
+.wall-schematic {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+.wall-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+  margin-bottom: 12px;
+}
+.wall-svg-wrap { margin-bottom: 12px; }
+.wall-info {
+  font-size: 12px;
+  color: var(--text2);
+}
+.wall-info strong { color: var(--navy); }
+
+.stage-content {}
+.stage-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.stage-badge {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--white);
+  background: var(--teal);
+  padding: 6px 16px;
+  border-radius: var(--radius);
+}
+.stage-tnm {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text2);
+}
+.stage-desc {
+  font-size: 14px;
+  color: var(--text2);
+  margin-bottom: 20px;
+  line-height: 1.65;
+  background: var(--off);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  border-left: 3px solid var(--teal);
+}
+.tx-cards {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.tx-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.tx-card-head {
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--white);
+}
+.tx-card-body {
+  padding: 14px 16px;
+}
+.tx-card-body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.tx-card-body li {
+  font-size: 13px;
+  color: var(--text2);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+.tx-card-body li::before {
+  content: '·';
+  position: absolute;
+  left: 4px;
+  color: var(--text3);
+}
+.note-box {
+  margin-top: 16px;
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-br);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #5A4000;
+  line-height: 1.6;
+}
+.note-box strong { color: #7A5700; }
+.survival-bar {
+  margin-top: 14px;
+  background: var(--navy);
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--teal-xl);
+  letter-spacing: 0.02em;
+}
+
+/* ─── TIMELINE SECTION ──────────────────────────────────── */
+#timeline { background: var(--navy); padding: 64px 0; }
+#timeline .section-eyebrow { color: var(--teal-l); }
+#timeline .section-title { color: var(--white); }
+#timeline .section-sub { color: rgba(255,255,255,0.5); }
+
+.regimen-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.reg-tab {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 18px;
+  cursor: pointer;
+  color: rgba(255,255,255,0.5);
+  transition: all 0.15s;
+}
+.reg-tab:hover { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.85); }
+.reg-tab.active { background: var(--teal); border-color: var(--teal); color: var(--white); }
+
+.reg-panel { display: none; }
+.reg-panel.active { display: block; }
+
+.reg-description {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 24px;
+  font-family: var(--mono);
+}
+.reg-description strong { color: var(--teal-l); }
+
+/* Month ruler */
+.timeline-ruler {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 0 2px;
+  position: relative;
+}
+.ruler-track {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  position: relative;
+}
+.ruler-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+  padding: 0 0 4px 0;
+  margin-bottom: 2px;
+}
+
+/* Timeline rows */
+.timeline-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tl-row {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+.tl-label {
+  width: 88px;
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  line-height: 1.3;
+  text-align: right;
+  justify-content: flex-end;
+}
+.tl-track {
+  flex: 1;
+  position: relative;
+  height: 36px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  overflow: visible;
+}
+
+/* Timeline blocks - positioned by % of 24-month window */
+.tl-block {
+  position: absolute;
+  top: 4px;
+  height: 28px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.15s;
+  z-index: 2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 6px;
+}
+.tl-block:hover { filter: brightness(1.15); transform: translateY(-1px); }
+
+.tl-chemo   { background: var(--teal);   color: #D4F5F1; }
+.tl-rt      { background: var(--amber);  color: #FEF0DD; }
+.tl-surg    { background: var(--coral);  color: #FCE8E5; }
+.tl-ici     { background: var(--purple); color: #EDE7FA; }
+.tl-staging { background: var(--slate);  color: #E4EBF1; }
+.tl-recov   { background: rgba(255,255,255,0.07); border: 1px dashed rgba(255,255,255,0.2); color: rgba(255,255,255,0.4); font-style: italic; }
+.tl-surv    { background: rgba(15,138,124,0.12); border: 1px solid rgba(15,138,124,0.3); color: var(--teal-l); }
+.tl-maint   { background: rgba(124,92,191,0.2); border: 1px solid rgba(124,92,191,0.4); color: var(--purple-l); }
+
+/* Phase annotations */
+.tl-annotations {
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.tl-ann {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.tl-ann-dot {
+  width: 8px; height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Tooltip */
+.tl-tooltip {
+  position: fixed;
+  background: var(--navy2);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-lg);
+  padding: 14px 18px;
+  max-width: 320px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  line-height: 1.6;
+}
+.tl-tooltip.visible { opacity: 1; }
+.tl-tooltip strong { color: var(--white); display: block; margin-bottom: 4px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; }
+.tl-tooltip .dose { color: var(--teal-xl); font-family: var(--mono); font-size: 11px; margin-top: 6px; }
+.tl-tooltip .warn { color: var(--amber-l); font-size: 12px; margin-top: 6px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 6px; }
+
+/* Key decision points */
+.decisions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+.decision-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+.decision-card h4 {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--teal-l);
+  margin-bottom: 6px;
+}
+.decision-card p {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.55;
+}
+
+.resistance-note {
+  margin-top: 16px;
+  background: rgba(232,135,42,0.1);
+  border: 1px solid rgba(232,135,42,0.3);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+}
+.resistance-note strong { color: var(--amber-l); }
+
+.survival-note {
+  margin-top: 12px;
+  background: rgba(15,138,124,0.1);
+  border: 1px solid rgba(15,138,124,0.3);
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--teal-l);
+}
+
+/* ─── TRIALS SECTION ────────────────────────────────────── */
+.trials-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.filter-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+  margin-right: 4px;
+}
+.filter-btn {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  padding: 5px 14px;
+  cursor: pointer;
+  color: var(--text2);
+  transition: all 0.15s;
+}
+.filter-btn:hover { border-color: var(--teal); color: var(--teal); }
+.filter-btn.active { background: var(--teal); border-color: var(--teal); color: var(--white); }
+
+.trials-table-wrap {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.trials-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.trials-table th {
+  background: var(--navy);
+  color: rgba(255,255,255,0.7);
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.trials-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border2);
+  vertical-align: top;
+  color: var(--text2);
+  line-height: 1.5;
+}
+.trials-table tr:last-child td { border-bottom: none; }
+.trials-table tr:hover td { background: var(--off); }
+.trials-table tr.hidden { display: none; }
+.trial-name { font-weight: 500; color: var(--navy); font-size: 13px; }
+.pmid-link {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--teal);
+  text-decoration: none;
+  display: block;
+  margin-top: 2px;
+}
+.pmid-link:hover { color: var(--teal-l); text-decoration: underline; }
+
+/* ─── BIOMARKERS SECTION ────────────────────────────────── */
+.bm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.bm-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.bm-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.bm-card-top {
+  padding: 16px 18px 12px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+.bm-name {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--navy);
+  line-height: 1;
+}
+.bm-status {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+.bm-status-standard  { background: #D4F5F1; color: #0A5E55; }
+.bm-status-emerging  { background: #EDE7FA; color: #4D3580; }
+.bm-status-exploratory { background: #E4EBF1; color: #2E4A60; }
+.bm-status-prognostic { background: #FEF0DD; color: #9A5510; }
+
+.bm-card-body {
+  padding: 0 18px 16px;
+}
+.bm-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 7px;
+  font-size: 12.5px;
+}
+.bm-row-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  width: 78px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.bm-row-val { color: var(--text); }
+.bm-divider { height: 1px; background: var(--border2); margin: 10px 0; }
+.bm-decision {
+  font-size: 13px;
+  color: var(--teal);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ─── RESISTANCE SECTION ────────────────────────────────── */
+.resistance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+/* ─── COMPARISON TABLE ──────────────────────────────────── */
+.compare-table-wrap {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  overflow-x: auto;
+}
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 680px;
+}
+.compare-table th {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  white-space: nowrap;
+}
+.compare-table th:first-child { background: var(--navy3); }
+.compare-table th.flot { background: var(--teal); }
+.compare-table th.cross { background: var(--amber); }
+.compare-table th.ici { background: var(--purple); }
+.compare-table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border2);
+  vertical-align: top;
+  line-height: 1.5;
+  color: var(--text2);
+}
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table td:first-child {
+  font-weight: 500;
+  color: var(--navy);
+  font-size: 12px;
+  background: var(--off);
+  white-space: nowrap;
+}
+.compare-table tr:nth-child(even) td:not(:first-child) { background: rgba(240,244,247,0.5); }
+
+/* ─── FOOTER ────────────────────────────────────────────── */
+#site-footer {
+  background: var(--navy);
+  padding: 36px 0;
+  margin-top: 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; } }
+.footer-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.footer-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.7;
+}
+.footer-sources h4 {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--teal-l);
+  margin-bottom: 10px;
+}
+.footer-sources ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.footer-sources li {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.5;
+}
+
+/* ─── LEGEND ────────────────────────────────────────────── */
+.tl-legend {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.tl-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.tl-legend-dot {
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 800px) {
+  .tl-label { width: 60px; font-size: 9px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ HEADER ═══════════ -->
+<header id="site-header">
+  <div class="container header-inner">
+    <div class="site-title">EAC <span>Clinical Reference</span></div>
+    <nav class="site-nav" aria-label="Site sections">
+      <button class="nav-btn active" onclick="scrollTo('overview')">Overview</button>
+      <button class="nav-btn" onclick="scrollTo('staging')">Staging</button>
+      <button class="nav-btn" onclick="scrollTo('timeline')">Treatment Timeline</button>
+      <button class="nav-btn" onclick="scrollTo('comparison')">Regimen Comparison</button>
+      <button class="nav-btn" onclick="scrollTo('trials')">Clinical Trials</button>
+      <button class="nav-btn" onclick="scrollTo('biomarkers')">Biomarkers</button>
+      <button class="nav-btn" onclick="scrollTo('resistance')">Resistance</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════ HERO ════════════ -->
+<section id="hero">
+  <div class="container">
+    <p class="hero-label">Clinical Reference · Oncology</p>
+    <h1 class="hero-title">Esophageal<br><em>Adenocarcinoma</em></h1>
+    <p class="hero-sub">Stage-by-stage treatment guidelines, interactive treatment timelines, clinical trial registry, and biomarker reference for EAC. For research and clinical education use.</p>
+    <div class="hero-badges">
+      <span class="hero-badge hb-teal">NCCN v4.2025</span>
+      <span class="hero-badge hb-teal">ESMO Interim 2025</span>
+      <span class="hero-badge hb-amber">ESOPEC NEJM 2025</span>
+      <span class="hero-badge hb-amber">CheckMate 649 5-yr</span>
+      <span class="hero-badge hb-slate">AJCC 8th Ed · TNM</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ OVERVIEW ════════ -->
+<section class="section" id="overview">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Epidemiology &amp; Prognosis</p>
+      <h2 class="section-title">Disease Overview</h2>
+      <p class="section-sub">EAC is the fastest-rising GI cancer in Western countries, with incidence increasing ~7.8%/year from 1973–1999. Most patients present at advanced stage.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-value">19.1%</div><div class="stat-label">Diagnosed at localized stage (SEER)</div></div>
+      <div class="stat-card"><div class="stat-value">48.6%</div><div class="stat-label">5-yr OS, localized disease</div></div>
+      <div class="stat-card"><div class="stat-value">~5%</div><div class="stat-label">5-yr OS, distant metastatic</div></div>
+      <div class="stat-card"><div class="stat-value">21.9%</div><div class="stat-label">Overall 5-yr survival all stages</div></div>
+      <div class="stat-card"><div class="stat-value">~70%</div><div class="stat-label">Stage III–IV at presentation</div></div>
+      <div class="stat-card"><div class="stat-value">82%</div><div class="stat-label">Deaths post-CROSS due to relapse</div></div>
+    </div>
+
+    <div class="card-grid card-grid-3">
+      <div class="card">
+        <div class="card-title">Risk factors</div>
+        <div class="card-body">Barrett's esophagus (primary precursor), chronic GERD, obesity, smoking. Barrett's carries 0.3–0.5%/year risk of malignant transformation. No early-stage symptoms — the disease is usually silent until T2+.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Why late presentation dominates</div>
+        <div class="card-body">Dysphagia — the cardinal symptom — does not appear until the esophageal lumen is 50–70% obstructed, typically T3 or beyond. Barrett's surveillance programs detect a minority; most patients have no prior diagnosis.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">The recurrence problem</div>
+        <div class="card-body">Even after R0 resection with perioperative FLOT, roughly half of patients relapse within 2–3 years. Distant metastasis (liver, lung, bone) dominates over locoregional failure in EAC — the inverse of squamous cell carcinoma.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ STAGING ═════════ -->
+<section class="section" id="staging" style="background: var(--offb); padding-top:48px; padding-bottom:64px;">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">AJCC 8th Edition · TNM</p>
+      <h2 class="section-title">Staging &amp; Treatment by Stage</h2>
+      <p class="section-sub">Select a stage to see the wall schematic, TNM definition, and treatment guideline.</p>
+    </div>
+
+    <div class="stage-nav" role="tablist">
+      <button class="stage-btn active" onclick="setStage('s0')" role="tab">Stage 0</button>
+      <button class="stage-btn" onclick="setStage('s1a')" role="tab">Stage IA</button>
+      <button class="stage-btn" onclick="setStage('s1b')" role="tab">Stage IB</button>
+      <button class="stage-btn" onclick="setStage('s2')" role="tab">Stage II</button>
+      <button class="stage-btn" onclick="setStage('s3')" role="tab">Stage III</button>
+      <button class="stage-btn" onclick="setStage('s4')" role="tab">Stage IV</button>
+    </div>
+
+    <!-- Stage panels -->
+    <div id="panel-s0" class="stage-panel active">
+      <div class="wall-schematic">
+        <div class="wall-label">Esophageal wall — tumor depth</div>
+        <div class="wall-svg-wrap">
+          <svg viewBox="0 0 220 280" width="100%" style="max-height:260px;">
+            <rect x="20" y="10" width="180" height="260" rx="8" fill="#F0F4F7" stroke="#D0DCE8" stroke-width="1"/>
+            <rect x="20" y="10"  width="180" height="40"  rx="0" fill="#C06464" opacity="0.25"/>
+            <rect x="20" y="50"  width="180" height="50"  fill="#D4845E" opacity="0.25"/>
+            <rect x="20" y="100" width="180" height="50"  fill="#E8A45C" opacity="0.25"/>
+            <rect x="20" y="150" width="180" height="35"  fill="#F4C07B" opacity="0.25"/>
+            <rect x="20" y="185" width="180" height="35"  fill="#F9E4B7" opacity="0.25"/>
+            <rect x="20" y="220" width="180" height="50" rx="0" fill="#E8F4F8" opacity="0.5"/>
+            <!-- TUMOR highlight — epithelium only -->
+            <rect x="20" y="185" width="180" height="35" fill="#8B1A1A" opacity="0.55" rx="0"/>
+            <ellipse cx="110" cy="202" rx="40" ry="10" fill="#C0392B" opacity="0.6"/>
+            <!-- Labels -->
+            <text x="110" y="34"  text-anchor="middle" font-size="11" fill="#4A3030" font-family="DM Mono,monospace">Adventitia</text>
+            <text x="110" y="80"  text-anchor="middle" font-size="11" fill="#4A3030" font-family="DM Mono,monospace">Muscularis propria</text>
+            <text x="110" y="128" text-anchor="middle" font-size="11" fill="#4A3030" font-family="DM Mono,monospace">Submucosa</text>
+            <text x="110" y="170" text-anchor="middle" font-size="11" fill="#4A3030" font-family="DM Mono,monospace">Muscularis mucosae</text>
+            <text x="110" y="202" text-anchor="middle" font-size="11" fill="#FFF" font-weight="500" font-family="DM Mono,monospace">Epithelium ← TUMOR</text>
+            <text x="110" y="250" text-anchor="middle" font-size="11" fill="#5A7A90" font-family="DM Mono,monospace">Lumen</text>
+          </svg>
+        </div>
+        <div class="wall-info"><strong>Tis</strong> — Malignant cells confined to epithelium above the basement membrane. LNM risk &lt;0.1%.</div>
+      </div>
+      <div class="stage-content">
+        <div class="stage-header">
+          <div class="stage-badge" style="background:var(--green)">Stage 0</div>
+          <div class="stage-tnm">Tis · N0 · M0</div>
+          <span class="tag tag-green">5-yr OS &gt;95%</span>
+        </div>
+        <div class="stage-desc">High-grade dysplasia. Malignant cells confined to the epithelium, above the basement membrane. Synonymous with carcinoma in situ. Arises in Barrett's esophagus. No lymph node involvement.</div>
+        <div class="tx-cards">
+          <div class="tx-card">
+            <div class="tx-card-head" style="background:var(--green)">Endoscopic resection (standard)</div>
+            <div class="tx-card-body"><ul>
+              <li>EMR — preferred for nodular/raised lesions</li>
+              <li>ESD — for larger, flat, or poorly defined lesions</li>
+              <li>Followed by RFA for remaining Barrett's mucosa</li>
+              <li>No surgery required at Tis</li>
+              <li>Surveillance EGD: 3, 6, 12 months then annually</li>
+            </ul></div>
+          </div>
+          <div class="tx-card">
+            <div class="tx-card-head" style="background:var(--slate)">Key notes</div>
+            <div class="tx-card-body"><ul>
+              <li>Esophagectomy is NOT indicated for Tis</li>
+              <li>EUS recommended to confirm absence of submucosal invasion before endoscopic approach</li>
+              <li>NCCN v4.2025 Category 1 recommendation</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="survival-bar">Source: NCCN v4.2025 · NCI PDQ Mar 2025</div>
+      </div>
+    </div>
+
+    <div id="panel-s1a" class="stage-panel">
+      <div class="wall-schematic">
+        <div class="wall-label">Esophageal wall — tumor depth</div>
+        <div class="wall-svg-wrap">
+          <svg viewBox="0 0 220 280" width="100%" style="max-height:260px;">
+            <rect x="20" y="10" width="180" height="260" rx="8" fill="#F0F4F7" stroke="#D0DCE8" stroke-width="1"/>
+            <rect x="20" y="10"  width="180" height="40"  fill="#C06464" opacity="0.25"/>
+            <rect x="20" y="50"  width="180" height="50"  fill="#D4845E" opacity="0.25"/>
+            <rect x="20" y="100" width="180" height="50"  fill="#E8A45C" opacity="0.25"/>
+            <rect x="20" y="150" width="180" height="35"  fill="#F4C07B" opacity="0.25"/>
+            <rect x="20" y="185" width="180" height="35"  fill="#F9E4B7" opacity="0.25"/>
+            <rect x="20" y="220" width="180" height="50"  fill="#E8F4F8" opacity="0.5"/>
+            <rect x="20" y="150" width="180" height="70" fill="#8B1A1A" opacity="0.55"/>
+            <ellipse cx="110" cy="175" rx="45" ry="12" fill="#C0392B" opacity="0.7"/>
+            <text x="110" y="34"  text-anchor="middle" font-size="11" fill="#4A3030" font-family="DM Mono,monospace">Adventitia</text>
+            <text x="110" y="80"  text-anchor="middle" font-size="11" fill="#4A3030" font-family="DM Mono,monospace">Muscularis propria</text>
+            <text x="110" y="128" text-anchor="middle" font-size="11" fill="#4A3030" font-family="DM Mono,monospace">Submucosa</text>
+            <text x="110" y="170" text-anchor="middle" font-size="11" fill="#FFF" font-weight="500" font-family="DM Mono,monospace">Musc. mucosae ← T1a</text>
+            <text x="110" y="200" text-anchor="middle" font-size="11" fill="#FFF" font-family="DM Mono,monospace">Epithelium</text>
+            <text x="110" y="250" text-anchor="middle" font-size="11" fill="#5A7A90" font-family="DM Mono,monospace">Lumen</text>
+          </svg>
+        </div>
+        <div class="wall-info"><strong>T1a</strong> — invades lamina propria or muscularis mucosae. LNM risk &lt;2%.</div>
+      </div>
+      <div class="stage-content">
+        <div class="stage-header">
+          <div class="stage-badge" style="background:#2E7D32">Stage IA</div>
+          <div class="stage-tnm">T1a · N0 · M0 · G1–GX</div>
+          <span class="tag tag-green">5-yr OS ~75–85%</span>
+        </div>
+        <div class="stage-desc">Tumor invades lamina propria or muscularis mucosae. No lymph node involvement. LNM risk below 2% — surgery usually not required.</div>
+        <div class="tx-cards">
+          <div class="tx-card">
+            <div class="tx-card-head" style="background:#2E7D32">Endoscopic therapy (standard)</div>
+            <div class="tx-card-body"><ul>
+              <li>EMR or ESD — curative in well-selected patients</li>
+              <li>RFA for non-nodular Barrett's after resection</li>
+              <li>LNM risk &lt;2% — surgery not routinely indicated</li>
+              <li>Complete eradication of Barrett's mucosa recommended</li>
+            </ul></div>
+          </div>
+          <div class="tx-card">
+            <div class="tx-card-head" style="background:var(--slate)">Surgery (selected cases)</div>
+            <div class="tx-card-body"><ul>
+              <li>Positive deep margin after EMR/ESD</li>
+              <li>Lesion not amenable to en bloc resection</li>
+              <li>G3 + lymphovascular invasion: MDT review</li>
+              <li>MIE preferred at high-volume centers</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="note-box"><strong>Note:</strong> LVI and poor differentiation (G3) upgrade risk. MDT review mandatory before endoscopy-only approach in high-risk T1a.</div>
+      </div>
+    </div>
+
+    <div id="panel-s1b" class="stage-panel">
+      <div class="wall-schematic">
+        <div class="wall-label">Esophageal wall — tumor depth</div>
+        <div class="wall-svg-wrap">
+          <svg viewBox="0 0 220 280" width="100%" style="max-height:260px;">
+            <rect x="20" y="10" width="180" height="260" rx="8" fill="#F0F4F7" stroke="#D0DCE8" stroke-width="1"/>
+            <rect x="20" y="10"  width="180" height="40"  fill="#C06464" opacity="0.25"/>
+            <rect x="20" y="50"  width="180" height="50"  fill="#D4845E" opacity="0.25"/>
+            <rect x="20" y="100" width="180" height="50"  fill="#E8A45C" opacity="0.25"/>
+            <rect x="20" y="150" width="180" height="35"  fill="#F4C07B" opacity="0.25"/>
+            <rect x="20" y="185" width="180" height="35"  fill="#F9E4B7" opacity="0.25"/>
+            <rect x="20" y="220" width="180" height="50"  fill="#E8F4F8" opacity="0.5"/>
+            <rect x="20" y="100" width="180" height="120" fill="#8B1A1A" opacity="0.55"/>
+            <ellipse cx="110" cy="130" rx="50" ry="14" fill="#C0392B" opacity="0.7"/>
+            <text x="110" y="34"  text-anchor="middle" font-size="11" fill="#4A3030" font-family="DM Mono,monospace">Adventitia</text>
+            <text x="110" y="80"  text-anchor="middle" font-size="11" fill="#4A3030" font-family="DM Mono,monospace">Muscularis propria</text>
+            <text x="110" y="126" text-anchor="middle" font-size="11" fill="#FFF" font-weight="500" font-family="DM Mono,monospace">Submucosa ← T1b</text>
+            <text x="110" y="170" text-anchor="middle" font-size="11" fill="#FFF" font-family="DM Mono,monospace">Musc. mucosae</text>
+            <text x="110" y="203" text-anchor="middle" font-size="11" fill="#FFF" font-family="DM Mono,monospace">Epithelium</text>
+            <text x="110" y="250" text-anchor="middle" font-size="11" fill="#5A7A90" font-family="DM Mono,monospace">Lumen</text>
+          </svg>
+        </div>
+        <div class="wall-info"><strong>T1b</strong> — invades submucosa. LNM risk: sm1 ~2%, sm2/3 ~20–30%.</div>
+      </div>
+      <div class="stage-content">
+        <div class="stage-header">
+          <div class="stage-badge" style="background:var(--amber)">Stage IB</div>
+          <div class="stage-tnm">T1b · N0 · M0 · G1–G3</div>
+          <span class="tag tag-amber">5-yr OS ~60–75%</span>
+        </div>
+        <div class="stage-desc">Tumor invades submucosa. Most contested management decision in EAC. LNM risk varies critically by depth of submucosal invasion (sm1 vs sm2/3). No randomized trial exists comparing endoscopy vs surgery.</div>
+        <div class="tx-cards">
+          <div class="tx-card">
+            <div class="tx-card-head" style="background:var(--coral)">Esophagectomy (standard sm2/3)</div>
+            <div class="tx-card-body"><ul>
+              <li>Recommended for sm2/3, LVI positive, G3</li>
+              <li>Two-field or three-field lymphadenectomy</li>
+              <li>No neoadjuvant therapy for node-negative T1b</li>
+              <li>MIE/robotic at experienced centers</li>
+            </ul></div>
+          </div>
+          <div class="tx-card">
+            <div class="tx-card-head" style="background:var(--amber)">Endoscopic (sm1 only)</div>
+            <div class="tx-card-body"><ul>
+              <li>Acceptable in sm1, well-diff, no LVI, &lt;2 cm</li>
+              <li>ESD preferred over EMR for submucosal disease</li>
+              <li>LNM risk ~2% in carefully selected pT1bsm1</li>
+              <li>Close EUS surveillance mandatory</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="note-box"><strong>Evidence gap:</strong> Mohapatra et al. SEER 2024 — endoscopic therapy showed comparable cancer-specific survival to surgery for T1bN0M0 selected lesions; CRT did not add benefit. All data retrospective.</div>
+      </div>
+    </div>
+
+    <div id="panel-s2" class="stage-panel">
+      <div class="wall-schematic">
+        <div class="wall-label">Esophageal wall — tumor depth</div>
+        <div class="wall-svg-wrap">
+          <svg viewBox="0 0 220 280" width="100%" style="max-height:260px;">
+            <rect x="20" y="10" width="180" height="260" rx="8" fill="#F0F4F7" stroke="#D0DCE8" stroke-width="1"/>
+            <rect x="20" y="10"  width="180" height="40"  fill="#C06464" opacity="0.25"/>
+            <rect x="20" y="50"  width="180" height="50"  fill="#D4845E" opacity="0.25"/>
+            <rect x="20" y="100" width="180" height="50"  fill="#E8A45C" opacity="0.25"/>
+            <rect x="20" y="150" width="180" height="35"  fill="#F4C07B" opacity="0.25"/>
+            <rect x="20" y="185" width="180" height="35"  fill="#F9E4B7" opacity="0.25"/>
+            <rect x="20" y="220" width="180" height="50"  fill="#E8F4F8" opacity="0.5"/>
+            <rect x="20" y="50"  width="180" height="170" fill="#8B1A1A" opacity="0.55"/>
+            <ellipse cx="110" cy="95" rx="55" ry="16" fill="#C0392B" opacity="0.7"/>
+            <text x="110" y="34"  text-anchor="middle" font-size="11" fill="#4A3030" font-family="DM Mono,monospace">Adventitia</text>
+            <text x="110" y="84"  text-anchor="middle" font-size="11" fill="#FFF" font-weight="500" font-family="DM Mono,monospace">Musc. propria ← T2</text>
+            <text x="110" y="136" text-anchor="middle" font-size="11" fill="#FFF" font-family="DM Mono,monospace">Submucosa</text>
+            <text x="110" y="170" text-anchor="middle" font-size="11" fill="#FFF" font-family="DM Mono,monospace">Musc. mucosae</text>
+            <text x="110" y="205" text-anchor="middle" font-size="11" fill="#FFF" font-family="DM Mono,monospace">Epithelium</text>
+            <text x="110" y="250" text-anchor="middle" font-size="11" fill="#5A7A90" font-family="DM Mono,monospace">Lumen</text>
+          </svg>
+        </div>
+        <div class="wall-info"><strong>T2</strong> — invades muscularis propria. cT2N0: ~50% will be upstaged at surgery.</div>
+      </div>
+      <div class="stage-content">
+        <div class="stage-header">
+          <div class="stage-badge" style="background:var(--amber)">Stage II</div>
+          <div class="stage-tnm">T2 · N0 · M0 — T3 · N0 · M0</div>
+          <span class="tag tag-amber">5-yr OS ~40–55%</span>
+        </div>
+        <div class="stage-desc">Tumor invades muscularis propria (T2) or adventitia (T3) without node involvement. Endoscopic treatment insufficient. Surgery is primary; neoadjuvant use at T2 is actively debated.</div>
+        <div class="tx-cards">
+          <div class="tx-card">
+            <div class="tx-card-head" style="background:var(--teal)">Perioperative FLOT (preferred)</div>
+            <div class="tx-card-body"><ul>
+              <li>4 cycles FLOT pre-op → esophagectomy → 4 cycles post-op</li>
+              <li>ESOPEC 2025: median OS 66 mo vs 37 mo (CROSS), HR 0.70</li>
+              <li>ESMO Grade I/A recommendation (Feb 2025)</li>
+              <li>Requires PS 0–1, no significant neuropathy</li>
+            </ul></div>
+          </div>
+          <div class="tx-card">
+            <div class="tx-card-head" style="background:var(--amber)">CROSS nCRT (alternative)</div>
+            <div class="tx-card-body"><ul>
+              <li>Carbo/pac weekly ×5 + RT 41.4 Gy → surgery 4–6 wk later</li>
+              <li>Preferred if FLOT not tolerable (elderly, neuropathy, PS 2)</li>
+              <li>NCCN Category 1; standard in North America</li>
+              <li>pCR ~23% in EAC</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="note-box"><strong>cT2 caveat:</strong> EUS accuracy for T2 is ~70%. Approximately 50% of cT2N0 patients are pathologically upstaged. Multinational retrospective (Wirsik et al., Ann Surg 2024) found no clear evidence to prefer FLOT vs CROSS in cT2 specifically.</div>
+      </div>
+    </div>
+
+    <div id="panel-s3" class="stage-panel">
+      <div class="wall-schematic">
+        <div class="wall-label">Esophageal wall — tumor depth</div>
+        <div class="wall-svg-wrap">
+          <svg viewBox="0 0 220 280" width="100%" style="max-height:260px;">
+            <rect x="20" y="10" width="180" height="260" rx="8" fill="#F0F4F7" stroke="#D0DCE8" stroke-width="1"/>
+            <rect x="20" y="10"  width="180" height="40"  fill="#C06464" opacity="0.25"/>
+            <rect x="20" y="50"  width="180" height="50"  fill="#D4845E" opacity="0.25"/>
+            <rect x="20" y="100" width="180" height="50"  fill="#E8A45C" opacity="0.25"/>
+            <rect x="20" y="150" width="180" height="35"  fill="#F4C07B" opacity="0.25"/>
+            <rect x="20" y="185" width="180" height="35"  fill="#F9E4B7" opacity="0.25"/>
+            <rect x="20" y="220" width="180" height="50"  fill="#E8F4F8" opacity="0.5"/>
+            <rect x="20" y="10"  width="180" height="210" fill="#8B1A1A" opacity="0.6"/>
+            <ellipse cx="110" cy="45" rx="60" ry="18" fill="#C0392B" opacity="0.75"/>
+            <text x="110" y="34"  text-anchor="middle" font-size="11" fill="#FFF" font-weight="500" font-family="DM Mono,monospace">Adventitia ← T3/T4a</text>
+            <text x="110" y="80"  text-anchor="middle" font-size="11" fill="#FFF" font-family="DM Mono,monospace">Muscularis propria</text>
+            <text x="110" y="130" text-anchor="middle" font-size="11" fill="#FFF" font-family="DM Mono,monospace">Submucosa</text>
+            <text x="110" y="170" text-anchor="middle" font-size="11" fill="#FFF" font-family="DM Mono,monospace">Musc. mucosae</text>
+            <text x="110" y="205" text-anchor="middle" font-size="11" fill="#FFF" font-family="DM Mono,monospace">Epithelium</text>
+            <text x="110" y="250" text-anchor="middle" font-size="11" fill="#5A7A90" font-family="DM Mono,monospace">Lumen</text>
+          </svg>
+        </div>
+        <div class="wall-info"><strong>T3–T4a</strong> — invades adventitia or adjacent structures. N1–N3 disease common. Multimodality treatment is standard.</div>
+      </div>
+      <div class="stage-content">
+        <div class="stage-header">
+          <div class="stage-badge" style="background:var(--coral)">Stage III</div>
+          <div class="stage-tnm">T2–T4a · N1–N3 · M0</div>
+          <span class="tag tag-coral">5-yr OS ~30–50% (periop FLOT)</span>
+        </div>
+        <div class="stage-desc">Locally advanced resectable EAC. Multimodality treatment is the standard; surgery alone is inadequate. FLOT is now the preferred perioperative regimen globally per ESMO 2025. See the treatment timeline section for full cycle-by-cycle detail.</div>
+        <div class="tx-cards">
+          <div class="tx-card">
+            <div class="tx-card-head" style="background:var(--teal)">Perioperative FLOT (ESMO I/A)</div>
+            <div class="tx-card-body"><ul>
+              <li>ESOPEC: 3-yr OS 57.4% FLOT vs 50.7% CROSS</li>
+              <li>5-yr OS 50.6% FLOT vs 38.7% CROSS</li>
+              <li>Distant recurrence HR 0.59 favoring FLOT (ESOPEC recurrence analysis)</li>
+              <li>90-day post-op mortality 3.1% vs 5.6% with CROSS</li>
+            </ul></div>
+          </div>
+          <div class="tx-card">
+            <div class="tx-card-head" style="background:var(--amber)">CROSS nCRT (NCCN Cat 1)</div>
+            <div class="tx-card-body"><ul>
+              <li>Shorter pre-op window (~5 weeks vs ~6 months)</li>
+              <li>Superior locoregional control vs FLOT</li>
+              <li>Preferred in N. America / when FLOT not feasible</li>
+              <li>10-yr OS 38% (all histologies); EAC subgroup lower</li>
+            </ul></div>
+          </div>
+          <div class="tx-card">
+            <div class="tx-card-head" style="background:var(--purple)">Post-resection ypN+/R1</div>
+            <div class="tx-card-body"><ul>
+              <li>VESTIGE (EORTC 1707): nivolumab + ipilimumab adjuvant</li>
+              <li>DFS benefit confirmed; emerging European standard</li>
+              <li>No established post-FLOT standard for poor responders</li>
+              <li>Clinical trial preferred at progression post-surgery</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="survival-bar">ESOPEC NEJM 2025 · ESMO Open Feb 2025 (PMID 39986705) · van Laarhoven EClinicalMedicine 2025 (PMID 39911244)</div>
+      </div>
+    </div>
+
+    <div id="panel-s4" class="stage-panel">
+      <div class="wall-schematic">
+        <div class="wall-label">Esophageal wall — tumor depth</div>
+        <div class="wall-svg-wrap">
+          <svg viewBox="0 0 220 280" width="100%" style="max-height:260px;">
+            <rect x="20" y="10" width="180" height="260" rx="8" fill="#F0F4F7" stroke="#D0DCE8" stroke-width="1"/>
+            <rect x="20" y="10" width="180" height="220" fill="#8B1A1A" opacity="0.7"/>
+            <!-- Distant mets markers -->
+            <circle cx="170" cy="30" r="14" fill="#C0392B" opacity="0.85"/>
+            <text x="170" y="35" text-anchor="middle" font-size="9" fill="#FFF" font-family="DM Mono,monospace">M1</text>
+            <circle cx="50"  cy="40" r="10" fill="#C0392B" opacity="0.7"/>
+            <text x="50"  y="45" text-anchor="middle" font-size="9" fill="#FFF" font-family="DM Mono,monospace">M1</text>
+            <text x="110" y="120" text-anchor="middle" font-size="12" fill="#FFF" font-weight="500" font-family="DM Mono,monospace">Full wall</text>
+            <text x="110" y="140" text-anchor="middle" font-size="12" fill="#FFF" font-family="DM Mono,monospace">involvement</text>
+            <text x="110" y="160" text-anchor="middle" font-size="12" fill="#FFF" font-family="DM Mono,monospace">+ Distant mets</text>
+            <rect x="20" y="220" width="180" height="50"  fill="#E8F4F8" opacity="0.3"/>
+            <text x="110" y="250" text-anchor="middle" font-size="11" fill="#9ABAC8" font-family="DM Mono,monospace">Lumen</text>
+          </svg>
+        </div>
+        <div class="wall-info"><strong>M1</strong> — distant metastases. Liver (41%), lung (21%), bone (12%), brain (2.8%). Palliative intent. Biomarker testing mandatory.</div>
+      </div>
+      <div class="stage-content">
+        <div class="stage-header">
+          <div class="stage-badge" style="background:var(--coral)">Stage IV</div>
+          <div class="stage-tnm">Any T · Any N · M1</div>
+          <span class="tag tag-coral">Median OS ~12–18 mo (1L chemo-ICI)</span>
+        </div>
+        <div class="stage-desc">Unresectable or metastatic EAC. Palliative-intent systemic therapy. Mandatory biomarker panel before 1L: HER2 (IHC+ISH), PD-L1 CPS (22C3), dMMR/MSI (4-antibody IHC), CLDN18.2 (VENTANA 43-14A).</div>
+        <div class="tx-cards">
+          <div class="tx-card">
+            <div class="tx-card-head" style="background:var(--coral)">1L HER2-negative (CPS ≥5)</div>
+            <div class="tx-card-body"><ul>
+              <li>Nivolumab + FOLFOX or XELOX (NCCN Cat 1)</li>
+              <li>CheckMate 649: OS benefit confirmed at 5-yr follow-up</li>
+              <li>Pembrolizumab + FP/oxaliplatin (CPS ≥1; Cat 1 for ≥10)</li>
+              <li>Tislelizumab + FP/oxaliplatin (CPS ≥1; added NCCN 2025)</li>
+              <li>Zolbetuximab + chemo for CLDN18.2 ≥75% (FDA approved 2024)</li>
+            </ul></div>
+          </div>
+          <div class="tx-card">
+            <div class="tx-card-head" style="background:var(--purple)">1L HER2-positive (~15–20%)</div>
+            <div class="tx-card-body"><ul>
+              <li>Trastuzumab + platinum/fluoropyrimidine ± ICI</li>
+              <li>Zanidatamab + chemo — phase II data; FDA application pending</li>
+              <li>HER2 IHC 3+ or 2+/FISH-amplified required</li>
+              <li>HER2 heterogeneity in EAC — re-biopsy at progression</li>
+            </ul></div>
+          </div>
+          <div class="tx-card">
+            <div class="tx-card-head" style="background:var(--slate)">2L standard</div>
+            <div class="tx-card-body"><ul>
+              <li>Ramucirumab + paclitaxel — NCCN Cat 1</li>
+              <li>HER2 status does not modify Ram+Pac benefit (AGAMENON registry)</li>
+              <li>PARAMUNE trial: Ram+Pac ± nivolumab (ongoing)</li>
+              <li>dMMR/MSI-H: pembrolizumab any line</li>
+              <li>Beyond 2L: clinical trial is the standard</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="survival-bar">CheckMate 649 5-yr (PMID 41687718) · ESMO 2025 · NCCN v4.2025 · SEOM-SEAP Consensus 2025 (PMC12399710)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ TIMELINE ════════ -->
+<section class="section" id="timeline">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Stage II–III · Interactive</p>
+      <h2 class="section-title">Treatment Timelines</h2>
+      <p class="section-sub">Hover any block for dosing and clinical detail. Select a regimen to compare timelines.</p>
+    </div>
+
+    <div class="regimen-tabs">
+      <button class="reg-tab active" onclick="setRegimen('flot')">Perioperative FLOT</button>
+      <button class="reg-tab" onclick="setRegimen('cross')">CROSS nCRT</button>
+      <button class="reg-tab" onclick="setRegimen('ici')">FLOT + ICI (investigational)</button>
+    </div>
+
+    <!-- FLOT Panel -->
+    <div id="reg-flot" class="reg-panel active">
+      <div class="reg-description">
+        <strong>FLOT:</strong> 5-FU 2600 mg/m² (24h) · Leucovorin 200 mg/m² · Oxaliplatin 85 mg/m² · Docetaxel 50 mg/m² — all day 1, q2w · 4 cycles pre-op → esophagectomy → 4 cycles post-op · G-CSF prophylaxis recommended
+      </div>
+      <div class="tl-legend">
+        <div class="tl-legend-item"><div class="tl-legend-dot" style="background:var(--teal)"></div>Chemo cycle</div>
+        <div class="tl-legend-item"><div class="tl-legend-dot" style="background:var(--coral)"></div>Surgery</div>
+        <div class="tl-legend-item"><div class="tl-legend-dot" style="background:var(--slate)"></div>Staging / reassessment</div>
+        <div class="tl-legend-item"><div class="tl-legend-dot" style="background:rgba(255,255,255,0.15); border:1px dashed rgba(255,255,255,0.3)"></div>Recovery</div>
+        <div class="tl-legend-item"><div class="tl-legend-dot" style="background:rgba(15,138,124,0.3); border:1px solid rgba(15,138,124,0.5)"></div>Surveillance</div>
+      </div>
+
+      <div class="ruler-ticks">
+        <span>M0</span><span>M2</span><span>M4</span><span>M6</span><span>M8</span><span>M10</span><span>M12</span><span>M14</span><span>M16</span><span>M18</span><span>M20</span><span>M22</span><span>M24</span>
+      </div>
+
+      <div class="timeline-wrap">
+        <!-- Row: Chemotherapy -->
+        <div class="tl-row">
+          <div class="tl-label">Chemo</div>
+          <div class="tl-track">
+            <!-- 24 months = 100%, each month = 4.17% -->
+            <!-- C1: M0–M0.5 = 0%–2.1% -->
+            <div class="tl-block tl-chemo" style="left:0.5%;width:3.5%"
+              data-title="FLOT Cycle 1" data-body="5-FU 2600 mg/m² over 24h, Leucovorin 200 mg/m², Oxaliplatin 85 mg/m², Docetaxel 50 mg/m² — all day 1. Cycle length: 2 weeks." data-dose="q2w · Day 1 dosing" data-warn="G-CSF prophylaxis recommended. Monitor for febrile neutropenia, peripheral neuropathy (oxaliplatin), diarrhea.">C1</div>
+            <!-- C2: M2 -->
+            <div class="tl-block tl-chemo" style="left:8.8%;width:3.5%"
+              data-title="FLOT Cycle 2" data-body="Same dosing as C1. Dose reductions for grade ≥3 neuropathy (oxaliplatin), grade ≥3 diarrhea, or febrile neutropenia. ~20–30% of patients require dose modification." data-dose="q2w · Day 1 dosing" data-warn="Cumulative oxaliplatin neuropathy begins to emerge by C2–C3.">C2</div>
+            <!-- C3: M4 -->
+            <div class="tl-block tl-chemo" style="left:17.1%;width:3.5%"
+              data-title="FLOT Cycle 3" data-body="Dose reductions may be applied based on C1–C2 tolerability. Peripheral neuropathy is the most common cumulative toxicity from oxaliplatin." data-dose="q2w · Day 1 dosing" data-warn="If grade ≥2 neuropathy persists: consider oxaliplatin dose reduction or replacement with cisplatin.">C3</div>
+            <!-- C4: M6 -->
+            <div class="tl-block tl-chemo" style="left:25.4%;width:3.5%"
+              data-title="FLOT Cycle 4 (pre-op last)" data-body="Final pre-operative cycle. Re-staging CT ± EUS scheduled approximately 2–3 weeks after C4 completion to exclude new M1 disease before surgery." data-dose="q2w · Day 1 dosing" data-warn="~15% of patients do not reach surgery due to disease progression, toxicity, or patient refusal.">C4</div>
+            <!-- POST-OP C5: M9 -->
+            <div class="tl-block tl-chemo" style="left:35.8%;width:3.5%"
+              data-title="FLOT Cycle 5 (post-op)" data-body="Post-operative FLOT resumes typically 6–10 weeks after esophagectomy, once surgical healing is confirmed and PS is restored. Only ~50–60% of patients complete all 4 post-op cycles." data-dose="q2w · Day 1 dosing" data-warn="Most common barrier to post-op completion: persistent dysphagia, nutritional deficiency, anastomotic stricture, fatigue.">C5</div>
+            <div class="tl-block tl-chemo" style="left:44.2%;width:3.5%"
+              data-title="FLOT Cycle 6" data-body="Post-operative cycle 6. Dose reductions carry over from pre-op phase. Neuropathy is often the dose-limiting factor at this stage." data-dose="q2w · Day 1 dosing">C6</div>
+            <div class="tl-block tl-chemo" style="left:52.5%;width:3.5%"
+              data-title="FLOT Cycle 7" data-body="Post-operative cycle 7. CT restaging typically performed after C6–C7 to assess for distant recurrence before completing adjuvant phase." data-dose="q2w · Day 1 dosing">C7</div>
+            <div class="tl-block tl-chemo" style="left:60.8%;width:3.5%"
+              data-title="FLOT Cycle 8 (final)" data-body="Final post-operative cycle. Completion of full 8-cycle perioperative FLOT is achieved by approximately 50% of enrolled patients in real-world series." data-dose="q2w · Day 1 dosing" data-warn="Donlon et al. Ann Surg 2021: post-op FLOT completion rate ~58% in real-world Irish cohort.">C8</div>
+          </div>
+        </div>
+
+        <!-- Row: Staging -->
+        <div class="tl-row">
+          <div class="tl-label">Staging</div>
+          <div class="tl-track">
+            <div class="tl-block tl-staging" style="left:0%;width:2%"
+              data-title="Baseline staging" data-body="EUS (T and N staging, 85–90% T-stage accuracy), CT chest/abdomen/pelvis, PET-CT to exclude M1 disease. Laparoscopy for GEJ tumors to exclude peritoneal metastases. HER2, PD-L1, dMMR, CLDN18.2 testing." data-dose="Required before FLOT initiation">Dx</div>
+            <div class="tl-block tl-staging" style="left:29.1%;width:2.5%"
+              data-title="Re-staging post-4 cycles" data-body="CT chest/abdomen after pre-op FLOT C4. Primary purpose: exclude new M1 disease before committing to surgery. EUS accuracy is low post-chemotherapy — not reliable for restaging T/N." data-dose="Typically ~2–3 wk after C4" data-warn="No validated biomarker of response during pre-op FLOT. If new M1 found: switch to palliative-intent protocol.">Re-stage</div>
+            <div class="tl-block tl-staging" style="left:64.5%;width:3%"
+              data-title="Post-op surveillance scan" data-body="First post-treatment CT at ~3 months post-completion of C8. Subsequent imaging: CT q3–6 months for 2 years, then annually. PET-CT for equivocal findings." data-dose="CT scan at ~M15–M16">Scan</div>
+          </div>
+        </div>
+
+        <!-- Row: Surgery -->
+        <div class="tl-row">
+          <div class="tl-label">Surgery</div>
+          <div class="tl-track">
+            <div class="tl-block tl-surg" style="left:29.5%;width:4%"
+              data-title="Esophagectomy" data-body="Ivor Lewis (most common), transhiatal, or McKeown esophagectomy. Minimally invasive (MIE) or robotic approach preferred at high-volume centers. Target: R0 resection with D2 lymphadenectomy (≥15 nodes examined). Timing: ~2–3 weeks after re-staging, typically month 6–7." data-dose="~Month 6.5 after FLOT start" data-warn="90-day post-op mortality: 3.1% (ESOPEC FLOT arm). Anastomotic leak rate ~8–12%. Peri-op mortality higher at low-volume centers.">Sx / M6</div>
+            <div class="tl-block tl-recov" style="left:33.5%;width:5.5%"
+              data-title="Post-operative recovery" data-body="Typically 10–14 days inpatient post-esophagectomy. Nasojejunal or jejunostomy feeding during healing. Post-op complications: anastomotic leak, pulmonary (most common), chyle leak, delayed gastric emptying. FLOT typically resumes at ~6–10 weeks post-surgery." data-dose="~M6.5–M8.5">Recovery</div>
+          </div>
+        </div>
+
+        <!-- Row: Surveillance -->
+        <div class="tl-row">
+          <div class="tl-label">Follow-up</div>
+          <div class="tl-track">
+            <div class="tl-block tl-surv" style="left:65%;width:35%"
+              data-title="Surveillance phase" data-body="CT chest/abdomen/pelvis: every 3–6 months for first 2 years, then annually up to 5 years. Endoscopy at 1 year if anastomotic integrity in question. EGD surveillance for Barrett's remnant if applicable. No standard blood biomarker for recurrence monitoring — CEA and CA19-9 prognostic only." data-dose="Post-treatment surveillance">Surveillance — CT q3–6 mo × 2 yr, then annual</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resistance-note">
+        <strong>Resistance recognition:</strong> Mandard TRG 4–5 (or Becker Grade 3) on the resection specimen is the only objective resistance signal — identified <em>after</em> 4 months of pre-operative treatment. No validated on-treatment resistance biomarker exists. ~40–50% of patients have TRG 3–5. No established switch protocol for non-responders before surgery.
+      </div>
+      <div class="survival-note">ESOPEC: median OS 66 mo · 3-yr OS 57.4% · 5-yr OS 50.6% · pCR ~16% · HR vs surgery alone: not separately reported (vs CROSS: HR 0.70, P=0.01)</div>
+
+      <div class="decisions-grid">
+        <div class="decision-card">
+          <h4>Fitness for FLOT?</h4>
+          <p>PS 0–1, no significant pre-existing neuropathy (oxaliplatin risk), adequate renal function (GFR &gt;50). Older or PS 2 patients: consider CROSS instead.</p>
+        </div>
+        <div class="decision-card">
+          <h4>Re-staging at M6</h4>
+          <p>CT ± EUS to exclude new M1 disease. If disease has progressed: switch to palliative-intent protocol. EUS is unreliable post-chemo for T/N re-staging.</p>
+        </div>
+        <div class="decision-card">
+          <h4>Post-op pathology</h4>
+          <p>ypN+ or R1 → consider VESTIGE protocol (nivo + ipi adjuvant, PMID 39542422). pCR → not validated as OS surrogate (Leite et al. 2026).</p>
+        </div>
+        <div class="decision-card">
+          <h4>Post-op FLOT completion</h4>
+          <p>Only ~50–60% complete all 4 post-op cycles in practice. Most common barriers: neuropathy, dysphagia, nutritional status, anastomotic complications.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CROSS Panel -->
+    <div id="reg-cross" class="reg-panel">
+      <div class="reg-description">
+        <strong>CROSS:</strong> Carboplatin AUC2 + Paclitaxel 50 mg/m² IV — both weekly × 5 weeks · Concurrent RT: 41.4 Gy in 23 fractions (1.8 Gy/fraction, 5 days/week) → surgery 4–6 weeks later · No standard adjuvant chemotherapy for EAC post-CROSS
+      </div>
+      <div class="tl-legend">
+        <div class="tl-legend-item"><div class="tl-legend-dot" style="background:var(--amber)"></div>CRT (chemo + RT)</div>
+        <div class="tl-legend-item"><div class="tl-legend-dot" style="background:var(--coral)"></div>Surgery</div>
+        <div class="tl-legend-item"><div class="tl-legend-dot" style="background:var(--slate)"></div>Staging / reassessment</div>
+        <div class="tl-legend-item"><div class="tl-legend-dot" style="background:rgba(255,255,255,0.15); border:1px dashed rgba(255,255,255,0.3)"></div>Recovery</div>
+        <div class="tl-legend-item"><div class="tl-legend-dot" style="background:rgba(15,138,124,0.3); border:1px solid rgba(15,138,124,0.5)"></div>Surveillance</div>
+      </div>
+
+      <div class="ruler-ticks">
+        <span>M0</span><span>M2</span><span>M4</span><span>M6</span><span>M8</span><span>M10</span><span>M12</span><span>M14</span><span>M16</span><span>M18</span><span>M20</span><span>M22</span><span>M24</span>
+      </div>
+
+      <div class="timeline-wrap">
+        <div class="tl-row">
+          <div class="tl-label">CRT</div>
+          <div class="tl-track">
+            <div class="tl-block tl-rt" style="left:2%;width:9%"
+              data-title="CROSS chemoradiotherapy" data-body="Carboplatin AUC2 + Paclitaxel 50 mg/m² weekly for 5 weeks. Concurrent RT: 41.4 Gy in 23 fractions of 1.8 Gy, 5 days/week. Total duration: ~5 weeks. Much shorter pre-surgical window than FLOT." data-dose="Carbo AUC2 + Pac 50 mg/m² weekly × 5 wk · RT 41.4 Gy/23 fr" data-warn="Grade ≥3 toxicity: fatigue (7%), leukopenia (6%), anorexia (5%), esophagitis (2%). Significantly less grade 3/4 than FLOT. Key late toxicity: esophageal stricture (up to 25% in real-world series).">CRT × 5 wk</div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">Staging</div>
+          <div class="tl-track">
+            <div class="tl-block tl-staging" style="left:0%;width:2%"
+              data-title="Baseline staging" data-body="EUS + CT + PET-CT to confirm cT2–T4a N0–N3 M0. Same biomarker testing as FLOT (HER2, PD-L1, dMMR, CLDN18.2). Laparoscopy for GEJ type I–III to exclude peritoneal disease." data-dose="Before CRT start">Dx</div>
+            <div class="tl-block tl-staging" style="left:11.5%;width:3%"
+              data-title="Re-staging post-CRT" data-body="CT chest/abdomen to exclude new M1 disease before surgery. Performed ~3–4 weeks after last RT fraction, once acute radiation reaction has partially subsided. CT accuracy for residual disease is poor (~40–60%) — pCR cannot be reliably predicted on imaging." data-dose="~3–4 wk after last RT" data-warn="PET-CT in this setting: metabolic complete response does not reliably predict pCR. False-negative rate ~30%. Do not use PET alone to defer surgery.">Re-stage</div>
+            <div class="tl-block tl-staging" style="left:62%;width:3%"
+              data-title="Post-op surveillance scan" data-body="First CT at ~3 months after surgery/discharge. Subsequent: CT q3–6 months for 2 years, then annually. EGD at 1 year to assess anastomosis." data-dose="Post-operative CT scan">Scan</div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">Surgery</div>
+          <div class="tl-track">
+            <div class="tl-block tl-surg" style="left:14.5%;width:4%"
+              data-title="Esophagectomy" data-body="Surgery is performed 4–6 weeks after completion of the last RT fraction. This timing is chosen to allow acute radiation injury to resolve while avoiding fibrosis. Same surgical approach as FLOT: Ivor Lewis or transhiatal, R0 target, ≥15 lymph nodes examined." data-dose="~4–6 wk post-CRT · ~Month 4" data-warn="Surgical complications in irradiated tissue: anastomotic leak rate slightly higher than FLOT arm in ESOPEC (5.6% vs 3.1% 90-day mortality). Radiation fibrosis can complicate dissection.">Sx / M4</div>
+            <div class="tl-block tl-recov" style="left:18.5%;width:6%"
+              data-title="Post-operative recovery" data-body="Similar post-operative course to FLOT esophagectomy. Radiation fibrosis of the surrounding mediastinal tissue may increase technical difficulty and complication rates compared to non-irradiated field." data-dose="~M4–M5.5">Recovery</div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">Adjuvant</div>
+          <div class="tl-track">
+            <div class="tl-block tl-recov" style="left:25%;width:40%"
+              data-title="No standard adjuvant chemotherapy" data-body="Unlike esophageal squamous cell carcinoma (where nivolumab adjuvant post-CROSS is approved via CheckMate 577), there is NO established standard adjuvant chemotherapy or immunotherapy for EAC post-CROSS and surgery. CheckMate 577 was predominantly ESCC; EAC subgroup DFS benefit was less clear." data-dose="EAC: no adjuvant standard" data-warn="For ypN+/R1 post-CROSS: VESTIGE protocol (nivo + ipi) is emerging as a standard in Europe. No post-FLOT poor-responder adjuvant data.">No standard adjuvant for EAC post-CROSS</div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">Follow-up</div>
+          <div class="tl-track">
+            <div class="tl-block tl-surv" style="left:25%;width:75%"
+              data-title="Surveillance — CROSS" data-body="CT q3–6 months for 2 years, then annually. EGD at 1 year. No specific blood biomarker recommended. Recurrence is predominantly distant in EAC post-CROSS — locoregional control is good but distant relapse occurs in ~47% at 3 years (ESOPEC CROSS arm, recurrence analysis JCO 2025)." data-dose="Surveillance post-surgery">Surveillance — CT q3–6 mo × 2 yr</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resistance-note">
+        <strong>The CROSS resistance problem:</strong> Distant recurrence occurred in 47.2% of CROSS patients at 3 years vs 31.5% in FLOT patients (ESOPEC recurrence analysis, JCO 2025, HR 0.59 favoring FLOT). CROSS provides better locoregional control (HR 1.00 — no difference) but inferior systemic control. This is the primary rationale for ESMO now preferring FLOT over CROSS for EAC.
+      </div>
+      <div class="survival-note">CROSS EAC: median OS 43.2 mo · 5-yr OS ~38.7% (ESOPEC control arm) · 10-yr OS ~36% (CROSS 10-yr follow-up, PMID 33891478) · pCR ~23% EAC</div>
+
+      <div class="decisions-grid">
+        <div class="decision-card">
+          <h4>Who gets CROSS?</h4>
+          <p>cT2–T4a, N0–N3, M0. FLOT not tolerable (elderly, PS 2, pre-existing neuropathy, patient preference). RT-eligible anatomy. NCCN Cat 1.</p>
+        </div>
+        <div class="decision-card">
+          <h4>Re-staging after CRT</h4>
+          <p>CT ± EUS ~3–4 weeks post-RT. Goal: exclude M1. Cannot reliably predict pCR on imaging. PET metabolic response is exploratory, not standard for surgical decisions.</p>
+        </div>
+        <div class="decision-card">
+          <h4>pCR (23%) — what it means</h4>
+          <p>pCR patients have 5-yr OS ~74%, recurrence ~21% (most distant). pCR is NOT a validated OS surrogate and should not be used as a primary trial endpoint (Leite et al. Eur J Cancer 2026).</p>
+        </div>
+        <div class="decision-card">
+          <h4>Adjuvant after CROSS</h4>
+          <p>For EAC with ypN+ or R1: VESTIGE nivo+ipi (emerging European standard). No adjuvant chemotherapy is established. Clinical trial preferred.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLOT + ICI Panel -->
+    <div id="reg-ici" class="reg-panel">
+      <div class="reg-description">
+        <strong>DANTE (phase II/III):</strong> FLOT q2w + Atezolizumab 840 mg q2w → surgery → FLOT q2w + Atezo → Atezo maintenance 1200 mg q3w × 8 cycles &nbsp;|&nbsp;
+        <strong>MATTERHORN (phase III):</strong> FLOT q2w + Durvalumab 1500 mg q4w → surgery → FLOT + Durva → Durva maintenance q4w &nbsp;|&nbsp;
+        Status: <span style="color:var(--amber-l)">NOT standard of care — enrol in trial</span>
+      </div>
+      <div class="tl-legend">
+        <div class="tl-legend-item"><div class="tl-legend-dot" style="background:var(--teal)"></div>FLOT chemo</div>
+        <div class="tl-legend-item"><div class="tl-legend-dot" style="background:var(--purple)"></div>ICI infusion</div>
+        <div class="tl-legend-item"><div class="tl-legend-dot" style="background:var(--coral)"></div>Surgery</div>
+        <div class="tl-legend-item"><div class="tl-legend-dot" style="background:rgba(124,92,191,0.25); border:1px solid rgba(124,92,191,0.4)"></div>ICI maintenance</div>
+        <div class="tl-legend-item"><div class="tl-legend-dot" style="background:rgba(15,138,124,0.3); border:1px solid rgba(15,138,124,0.5)"></div>Surveillance</div>
+      </div>
+
+      <div class="ruler-ticks">
+        <span>M0</span><span>M2</span><span>M4</span><span>M6</span><span>M8</span><span>M10</span><span>M12</span><span>M14</span><span>M16</span><span>M18</span><span>M20</span><span>M22</span><span>M24</span>
+      </div>
+
+      <div class="timeline-wrap">
+        <div class="tl-row">
+          <div class="tl-label">FLOT</div>
+          <div class="tl-track">
+            <div class="tl-block tl-chemo" style="left:0.5%;width:3.5%" data-title="FLOT C1" data-body="FLOT dosing identical to FLOT-alone arm (5-FU/LV/Ox/Doc). FLOT given q2w. ICI is administered concurrently on the same day or within the same infusion visit." data-dose="5-FU 2600/LV 200/Ox 85/Doc 50 mg/m² q2w">C1</div>
+            <div class="tl-block tl-chemo" style="left:8.8%;width:3.5%" data-title="FLOT C2" data-body="FLOT C2. Concurrent ICI infusion. Monitor for combined toxicity — irAEs may be harder to distinguish from chemotherapy toxicity." data-dose="q2w">C2</div>
+            <div class="tl-block tl-chemo" style="left:17.1%;width:3.5%" data-title="FLOT C3" data-body="FLOT C3. Dose modifications for chemo toxicity should not trigger automatic ICI hold unless irAE suspected." data-dose="q2w">C3</div>
+            <div class="tl-block tl-chemo" style="left:25.4%;width:3.5%" data-title="FLOT C4 (pre-op last)" data-body="Final pre-op FLOT cycle. Re-staging follows. ICI may continue during re-staging window in some trial protocols." data-dose="q2w">C4</div>
+            <div class="tl-block tl-chemo" style="left:35.8%;width:3.5%" data-title="FLOT C5" data-body="Post-op FLOT resumption ~6–10 weeks after esophagectomy. ICI co-administration resumes concurrently if tolerated and no active irAE." data-dose="q2w">C5</div>
+            <div class="tl-block tl-chemo" style="left:44.2%;width:3.5%" data-title="FLOT C6" data-body="Post-op FLOT C6." data-dose="q2w">C6</div>
+            <div class="tl-block tl-chemo" style="left:52.5%;width:3.5%" data-title="FLOT C7" data-body="Post-op FLOT C7." data-dose="q2w">C7</div>
+            <div class="tl-block tl-chemo" style="left:60.8%;width:3.5%" data-title="FLOT C8 (final)" data-body="Final FLOT cycle. After C8, ICI transitions to maintenance monotherapy." data-dose="q2w">C8</div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">ICI</div>
+          <div class="tl-track">
+            <!-- Pre-op ICI q2w concurrent with FLOT: ~M0–M6.5 -->
+            <div class="tl-block tl-ici" style="left:0.5%;width:3.5%" data-title="ICI Dose 1" data-body="DANTE: Atezolizumab 840 mg q2w concurrent with FLOT. MATTERHORN: Durvalumab 1500 mg q4w (Day 1 of every 2nd FLOT cycle). These flat-dose regimens avoid weight-based calculation errors." data-dose="Atezo 840 mg q2w (DANTE) · Durva 1500 mg q4w (MATTERHORN)">I1</div>
+            <div class="tl-block tl-ici" style="left:8.8%;width:3.5%" data-title="ICI Dose 2" data-body="Monitor for irAEs: immune pneumonitis, colitis, hepatitis, thyroiditis. Any grade ≥3 irAE mandates ICI hold. Grade 3 pneumonitis, colitis, or hepatitis → ICI permanently discontinued per most protocols." data-dose="Atezo 840 mg q2w" data-warn="Combined chemo+ICI irAE rate: grade 3+ ~20–25%. Pneumonitis and colitis are most common in EAC trials.">I2</div>
+            <div class="tl-block tl-ici" style="left:17.1%;width:3.5%" data-title="ICI Dose 3" data-dose="Atezo 840 mg q2w">I3</div>
+            <div class="tl-block tl-ici" style="left:25.4%;width:3.5%" data-title="ICI Dose 4" data-body="Final pre-op ICI dose. Some protocols include ICI during the re-staging window." data-dose="Atezo 840 mg q2w">I4</div>
+            <div class="tl-block tl-ici" style="left:35.8%;width:3.5%" data-title="ICI Dose 5 (post-op)" data-body="ICI resumes post-operatively concurrently with FLOT, provided no active irAE and surgical healing is confirmed." data-dose="Atezo 840 mg q2w">I5</div>
+            <div class="tl-block tl-ici" style="left:44.2%;width:3.5%" data-title="ICI Dose 6" data-dose="Atezo 840 mg q2w">I6</div>
+            <div class="tl-block tl-ici" style="left:52.5%;width:3.5%" data-title="ICI Dose 7" data-dose="Atezo 840 mg q2w">I7</div>
+            <div class="tl-block tl-ici" style="left:60.8%;width:3.5%" data-title="ICI Dose 8" data-dose="Atezo 840 mg q2w">I8</div>
+            <!-- Maintenance ICI: M15–M24 -->
+            <div class="tl-block tl-maint" style="left:64.5%;width:35%"
+              data-title="ICI maintenance monotherapy" data-body="DANTE: Atezolizumab 1200 mg q3w for 8 cycles (~6 months) after completion of FLOT C8. MATTERHORN: Durvalumab 1500 mg q4w for up to 12 months. Total ICI exposure: ~18–24 months from first dose." data-dose="Atezo 1200 mg q3w × 8 cycles (DANTE) · Durva 1500 mg q4w × 12 mo (MATTERHORN)" data-warn="irAEs can occur during maintenance even without concurrent chemo. Monitor thyroid, liver, lung function.">ICI maintenance (trial-dependent)</div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">Surgery</div>
+          <div class="tl-track">
+            <div class="tl-block tl-surg" style="left:29.5%;width:4%"
+              data-title="Esophagectomy" data-body="Surgery timing and approach same as FLOT-alone. Importantly, active irAEs must be resolved before surgery — immune pneumonitis or colitis requiring steroids may delay esophagectomy. Surgical outcomes in DANTE ICI arm: similar R0 rate and peri-operative mortality to FLOT-alone arm." data-dose="~Month 6–7 · Same as FLOT alone" data-warn="irAE-related surgical delays reported in ~5% of ICI-combination perioperative trials.">Sx</div>
+            <div class="tl-block tl-recov" style="left:33.5%;width:5.5%" data-title="Recovery" data-body="Post-operative recovery identical to FLOT alone. ICI is held during acute recovery period." data-dose="~M7–M8.5">Recovery</div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">Follow-up</div>
+          <div class="tl-track">
+            <div class="tl-block tl-surv" style="left:85%;width:15%"
+              data-title="Surveillance post-ICI maintenance" data-body="Standard CT surveillance as per FLOT-alone, plus extended irAE monitoring (thyroid function, autoimmune markers) for 12 months after last ICI dose." data-dose="Post-maintenance surveillance">Surveillance</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resistance-note">
+        <strong>Current evidence status:</strong> DANTE phase II (Lorenzen et al. JCO 2024, PMID 37963317): FLOT + atezolizumab improved pCR (24% vs 15%) and major pathologic response — but phase III PFS data are not yet mature. MATTERHORN (NEJM 2025): durvalumab + FLOT significantly improved 2-yr EFS (67.4% vs 58.5%, HR 0.71) and pCR (19.2% vs 5.0%) vs FLOT alone in gastric/GEJ adenocarcinoma. OS data not yet mature. Meta-analysis (Zhao et al. 2025): modest perioperative ICI benefit, concentrated in PD-L1 CPS ≥5.
+      </div>
+      <div class="survival-note">ICI benefit is NOT uniform: MSI-H patients show dramatic pCR rates (~60–80%). PD-L1 CPS ≥10 patients show most consistent benefit. CPS &lt;5: benefit marginal or absent. Do not use outside a clinical trial.</div>
+
+      <div class="decisions-grid">
+        <div class="decision-card">
+          <h4>PD-L1 CPS selection</h4>
+          <p>Most trials require CPS ≥1; benefit concentrated in CPS ≥5–10. dMMR/MSI-H tumors may be candidates for ICI-alone neoadjuvant (NEONIPIGA/INFINITY trials).</p>
+        </div>
+        <div class="decision-card">
+          <h4>irAE management</h4>
+          <p>Grade ≥3 irAE: hold ICI, start corticosteroids (1–2 mg/kg prednisolone). Grade 3 pneumonitis, colitis, hepatitis: permanent ICI discontinuation per most protocols.</p>
+        </div>
+        <div class="decision-card">
+          <h4>Active trials (2025)</h4>
+          <p>DANTE (atezo+FLOT), MATTERHORN (durva+FLOT), KEYNOTE-585 (pembro+FLOT cohort), PHERFLOT (pembro+trast+FLOT for HER2+). Enrol patients where eligible.</p>
+        </div>
+        <div class="decision-card">
+          <h4>MSI-H — different approach</h4>
+          <p>MSI-H EAC (~3–5%): NEONIPIGA protocol — nivolumab + ipilimumab neoadjuvant (no chemo). pCR rate 58.6%. Consider ICI-alone approach in this rare subgroup.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════ REGIMEN COMPARISON ════════ -->
+<section class="section" id="comparison">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Head-to-head</p>
+      <h2 class="section-title">Regimen Comparison</h2>
+    </div>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="flot">Perioperative FLOT</th>
+            <th class="cross">CROSS nCRT</th>
+            <th class="ici">FLOT + ICI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Guideline status</td><td>ESMO Grade I/A (2025) · NCCN Cat 1</td><td>NCCN Cat 1 · ESMO Grade I/C</td><td>Investigational — not standard</td></tr>
+          <tr><td>Key evidence</td><td>ESOPEC (NEJM 2025) — HR 0.70 vs CROSS</td><td>van Hagen CROSS (NEJM 2012); 10-yr data (JCO 2021)</td><td>DANTE (JCO 2024) · MATTERHORN (NEJM 2025)</td></tr>
+          <tr><td>Median OS (EAC)</td><td>66 months (ESOPEC)</td><td>43 months (ESOPEC CROSS arm)</td><td>Not yet reported</td></tr>
+          <tr><td>5-yr OS</td><td>~51%</td><td>~39%</td><td>Unknown</td></tr>
+          <tr><td>pCR rate (EAC)</td><td>~16%</td><td>~23%</td><td>~20–30% (early data)</td></tr>
+          <tr><td>Surgery timing</td><td>~Month 6–7</td><td>~Month 4</td><td>~Month 6–7</td></tr>
+          <tr><td>Total duration</td><td>~14 months (8 FLOT cycles)</td><td>~4–5 months (CRT + surgery)</td><td>~18–24 months (incl. ICI maintenance)</td></tr>
+          <tr><td>Distant recurrence (3-yr)</td><td>31.5%</td><td>47.2%</td><td>Unknown</td></tr>
+          <tr><td>Locoregional recurrence (3-yr)</td><td>20.2%</td><td>17.4%</td><td>Unknown</td></tr>
+          <tr><td>Key toxicities</td><td>Febrile neutropenia · Neuropathy · Diarrhea</td><td>Fatigue · Esophagitis · RT stricture (late)</td><td>Above + irAE (pneumonitis, colitis, thyroiditis)</td></tr>
+          <tr><td>Post-op adjuvant (EAC)</td><td>VESTIGE nivo+ipi if ypN+/R1</td><td>None established for EAC</td><td>ICI maintenance (trial-specific)</td></tr>
+          <tr><td>Patient selection</td><td>PS 0–1 · No significant neuropathy</td><td>PS 0–2 · RT-eligible anatomy</td><td>PS 0–1 · PD-L1 CPS ≥1–5 (trial-dependent)</td></tr>
+          <tr><td>Preferred setting</td><td>Europe / globally (post-ESOPEC)</td><td>N. America / Australasia</td><td>Clinical trial sites only</td></tr>
+          <tr><td>Resistance recognized by</td><td>Resection specimen Mandard/Becker TRG</td><td>Resection specimen TRG</td><td>TRG + immune infiltrate (exploratory)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px;color:var(--text3);margin-top:10px;">Sources: ESOPEC NEJM 2025 · ESOPEC recurrence JCO 2025 · CROSS 10-yr JCO 2021 (PMID 33891478) · MATTERHORN NEJM 2025 · DANTE JCO 2024 (PMID 37963317) · ESMO Open Feb 2025 (PMID 39986705)</p>
+  </div>
+</section>
+
+<!-- ═════════════════════════ CLINICAL TRIALS ════════════ -->
+<section class="section" id="trials" style="background:var(--offb); padding-top:48px; padding-bottom:64px;">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Evidence base</p>
+      <h2 class="section-title">Selected Clinical Trials</h2>
+      <p class="section-sub">Key trials informing current EAC practice. Filter by setting or phase.</p>
+    </div>
+
+    <div class="trials-filter">
+      <span class="filter-label">Filter:</span>
+      <button class="filter-btn active" onclick="filterTrials('all')">All</button>
+      <button class="filter-btn" onclick="filterTrials('neoadj')">Neoadjuvant / Periop</button>
+      <button class="filter-btn" onclick="filterTrials('advanced')">Advanced / Metastatic</button>
+      <button class="filter-btn" onclick="filterTrials('adjuvant')">Adjuvant</button>
+      <button class="filter-btn" onclick="filterTrials('ici')">ICI</button>
+    </div>
+
+    <div class="trials-table-wrap">
+      <table class="trials-table">
+        <thead>
+          <tr>
+            <th>Trial / PMID</th>
+            <th>Phase</th>
+            <th>Regimen</th>
+            <th>Setting</th>
+            <th>Key Result (EAC)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-cat="neoadj">
+            <td><div class="trial-name">ESOPEC</div><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39842010/" target="_blank">PMID 39842010</a></td>
+            <td><span class="tag tag-teal">Phase III</span></td>
+            <td>Perioperative FLOT vs neoadjuvant CROSS → surgery</td>
+            <td>Locally advanced resectable EAC</td>
+            <td>Median OS 66 vs 37 mo · HR 0.70 (P=0.01) · 5-yr OS 51% vs 39%</td>
+          </tr>
+          <tr data-cat="neoadj">
+            <td><div class="trial-name">CROSS</div><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/33891478/" target="_blank">PMID 33891478</a></td>
+            <td><span class="tag tag-teal">Phase III</span></td>
+            <td>nCRT (carbo/pac + 41.4 Gy) → surgery vs surgery alone</td>
+            <td>Locally advanced resectable EC (75% EAC)</td>
+            <td>10-yr OS 38% vs 25% · HR 0.70 · Locoregional HR 0.40 · Distant HR 0.76 (ns)</td>
+          </tr>
+          <tr data-cat="neoadj">
+            <td><div class="trial-name">Neo-AEGIS</div><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37677125/" target="_blank">PMID 37677125</a></td>
+            <td><span class="tag tag-teal">Phase III</span></td>
+            <td>CROSS nCRT vs ECF/ECX/FLOT periop chemo → surgery</td>
+            <td>Locally advanced OAC/GEJ</td>
+            <td>No significant difference in 3-yr OS · FLOT arm underpowered (added late)</td>
+          </tr>
+          <tr data-cat="neoadj ici">
+            <td><div class="trial-name">DANTE</div><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/37963317/" target="_blank">PMID 37963317</a></td>
+            <td><span class="tag tag-purple">Phase II/III</span></td>
+            <td>Periop FLOT + atezolizumab vs FLOT alone</td>
+            <td>Resectable gastric/GEJ adenocarcinoma</td>
+            <td>Phase II: pCR 24% vs 15% · Phase III PFS data maturing</td>
+          </tr>
+          <tr data-cat="neoadj ici">
+            <td><div class="trial-name">MATTERHORN</div><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39018031/" target="_blank">PMID 39018031</a></td>
+            <td><span class="tag tag-teal">Phase III</span></td>
+            <td>Periop FLOT + durvalumab 1500 mg q4w vs FLOT alone</td>
+            <td>Resectable gastric/GEJ adenocarcinoma</td>
+            <td>2-yr EFS 67.4% vs 58.5% · HR 0.71 · pCR 19.2% vs 5.0% · OS not yet mature</td>
+          </tr>
+          <tr data-cat="neoadj ici">
+            <td><div class="trial-name">KEYNOTE-585</div><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/38513982/" target="_blank">PMID 38513982</a></td>
+            <td><span class="tag tag-teal">Phase III</span></td>
+            <td>Periop pembro + chemo (XP or FLOT cohort) vs chemo</td>
+            <td>Locally advanced gastric/GEJ</td>
+            <td>pCR improvement (+11.4%) · EFS superior · OS not yet significantly different</td>
+          </tr>
+          <tr data-cat="adjuvant ici">
+            <td><div class="trial-name">VESTIGE</div><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/39542422/" target="_blank">PMID 39542422</a></td>
+            <td><span class="tag tag-purple">Phase II</span></td>
+            <td>Adjuvant nivolumab + ipilimumab vs chemo (ypN+ or R1 post-periop ChT)</td>
+            <td>High-risk resected gastric/OGJ adenocarcinoma</td>
+            <td>DFS benefit confirmed · Emerging European standard for ypN+/R1</td>
+          </tr>
+          <tr data-cat="advanced ici">
+            <td><div class="trial-name">CheckMate 649</div><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/41687718/" target="_blank">PMID 41687718</a></td>
+            <td><span class="tag tag-teal">Phase III</span></td>
+            <td>Nivolumab + FOLFOX/XELOX vs chemo alone (1L)</td>
+            <td>Advanced HER2-neg gastric/GEJ/EAC (5-yr follow-up)</td>
+            <td>OS benefit sustained in CPS ≥5 · CPS &lt;5: no meaningful benefit · 5-yr OS ~15% CPS ≥5</td>
+          </tr>
+          <tr data-cat="advanced ici">
+            <td><div class="trial-name">PARAMUNE</div><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/40155326/" target="_blank">PMID 40155326</a></td>
+            <td><span class="tag tag-amber">Phase II/III</span></td>
+            <td>Ram + pac ± nivolumab (2L, CPS ≥1, HER2-neg)</td>
+            <td>Advanced gastric/GEJ/EAC post-1L</td>
+            <td>Ongoing · Tests whether ICI continuation beyond 1L adds OS benefit</td>
+          </tr>
+          <tr data-cat="neoadj">
+            <td><div class="trial-name">RTOG 1010</div><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/41808581/" target="_blank">PMID 41808581</a></td>
+            <td><span class="tag tag-teal">Phase III</span></td>
+            <td>Trimodality (CROSS) ± trastuzumab (HER2+ EAC)</td>
+            <td>Resectable HER2-overexpressing EAC</td>
+            <td>No OS benefit from adding trastuzumab to trimodality therapy in HER2+ EAC</td>
+          </tr>
+          <tr data-cat="neoadj ici">
+            <td><div class="trial-name">PERFECT</div><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/33504550/" target="_blank">PMID 33504550</a></td>
+            <td><span class="tag tag-amber">Phase II</span></td>
+            <td>nCRT (CROSS) + atezolizumab → surgery</td>
+            <td>Resectable EAC</td>
+            <td>Feasibility confirmed · pCR 24% · Immune profiling data; not powered for efficacy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════ BIOMARKERS ════════════════ -->
+<section class="section" id="biomarkers">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Molecular diagnostics</p>
+      <h2 class="section-title">Biomarkers in Clinical Use</h2>
+      <p class="section-sub">Four biomarkers are now mandatory at diagnosis of advanced EAC. Testing must be done before first-line treatment initiation.</p>
+    </div>
+
+    <div class="bm-grid">
+      <div class="bm-card">
+        <div class="bm-card-top">
+          <div class="bm-name">HER2</div>
+          <div class="bm-status bm-status-standard">Standard</div>
+        </div>
+        <div class="bm-card-body">
+          <div class="bm-divider"></div>
+          <div class="bm-row"><div class="bm-row-label">Assay</div><div class="bm-row-val">IHC (4B5) + ISH/FISH if IHC 2+</div></div>
+          <div class="bm-row"><div class="bm-row-label">Threshold</div><div class="bm-row-val">IHC 3+, or IHC 2+/FISH amplified</div></div>
+          <div class="bm-row"><div class="bm-row-label">Prevalence</div><div class="bm-row-val">~15–20% EAC</div></div>
+          <div class="bm-row"><div class="bm-row-label">Caution</div><div class="bm-row-val">HER2 heterogeneity in EAC — single biopsy may miss. Re-test at progression.</div></div>
+          <div class="bm-divider"></div>
+          <div class="bm-decision">Trastuzumab 1L · Zanidatamab (trial) · RTOG 1010 eligibility</div>
+        </div>
+      </div>
+
+      <div class="bm-card">
+        <div class="bm-card-top">
+          <div class="bm-name">PD-L1 CPS</div>
+          <div class="bm-status bm-status-standard">Standard</div>
+        </div>
+        <div class="bm-card-body">
+          <div class="bm-divider"></div>
+          <div class="bm-row"><div class="bm-row-label">Assay</div><div class="bm-row-val">IHC 22C3 pharmDx (Dako)</div></div>
+          <div class="bm-row"><div class="bm-row-label">Threshold</div><div class="bm-row-val">CPS ≥5 (nivolumab) · CPS ≥1 (pembro/tisle) · CPS ≥10 (NCCN Cat 1)</div></div>
+          <div class="bm-row"><div class="bm-row-label">Prevalence</div><div class="bm-row-val">CPS ≥5: ~40–60% of EAC</div></div>
+          <div class="bm-row"><div class="bm-row-label">Caution</div><div class="bm-row-val">22% local–central discordance rate (SAPHIR registry 2025). Borderline CPS cases warrant central pathology review.</div></div>
+          <div class="bm-divider"></div>
+          <div class="bm-decision">ICI + chemo in 1L advanced disease</div>
+        </div>
+      </div>
+
+      <div class="bm-card">
+        <div class="bm-card-top">
+          <div class="bm-name">dMMR / MSI-H</div>
+          <div class="bm-status bm-status-standard">Standard</div>
+        </div>
+        <div class="bm-card-body">
+          <div class="bm-divider"></div>
+          <div class="bm-row"><div class="bm-row-label">Assay</div><div class="bm-row-val">IHC (MLH1/MSH2/MSH6/PMS2) or PCR/NGS</div></div>
+          <div class="bm-row"><div class="bm-row-label">Threshold</div><div class="bm-row-val">Any dMMR on IHC</div></div>
+          <div class="bm-row"><div class="bm-row-label">Prevalence</div><div class="bm-row-val">~3–5% of EAC</div></div>
+          <div class="bm-row"><div class="bm-row-label">Significance</div><div class="bm-row-val">ICI priority regardless of PD-L1 CPS or HER2 status. dMMR EAC shows dramatic ICI responses (pCR ~60% in NEONIPIGA).</div></div>
+          <div class="bm-divider"></div>
+          <div class="bm-decision">Pembrolizumab or nivolumab — any line — priority over other biomarker-driven therapy</div>
+        </div>
+      </div>
+
+      <div class="bm-card">
+        <div class="bm-card-top">
+          <div class="bm-name">CLDN18.2</div>
+          <div class="bm-status bm-status-emerging">Emerging standard</div>
+        </div>
+        <div class="bm-card-body">
+          <div class="bm-divider"></div>
+          <div class="bm-row"><div class="bm-row-label">Assay</div><div class="bm-row-val">IHC (VENTANA CLDN18 43-14A)</div></div>
+          <div class="bm-row"><div class="bm-row-label">Threshold</div><div class="bm-row-val">≥75% of tumor cells with 2+/3+ staining</div></div>
+          <div class="bm-row"><div class="bm-row-label">Prevalence</div><div class="bm-row-val">~26–30% of GEA broadly</div></div>
+          <div class="bm-row"><div class="bm-row-label">Status</div><div class="bm-row-val">FDA approved Oct 2024 (zolbetuximab + chemo). NCCN category updated 2025. Testing not yet universally available.</div></div>
+          <div class="bm-divider"></div>
+          <div class="bm-decision">Zolbetuximab + fluoropyrimidine/platinum 1L (HER2-neg, CPS any)</div>
+        </div>
+      </div>
+
+      <div class="bm-card">
+        <div class="bm-card-top">
+          <div class="bm-name">CEA / CA19-9</div>
+          <div class="bm-status bm-status-prognostic">Prognostic only</div>
+        </div>
+        <div class="bm-card-body">
+          <div class="bm-divider"></div>
+          <div class="bm-row"><div class="bm-row-label">Assay</div><div class="bm-row-val">Serum immunoassay</div></div>
+          <div class="bm-row"><div class="bm-row-label">Threshold</div><div class="bm-row-val">Elevated above ULN at baseline</div></div>
+          <div class="bm-row"><div class="bm-row-label">Evidence</div><div class="bm-row-val">van der Kaaij et al. 2019: elevated pre-treatment CEA/CA19-9 independently predicts early treatment failure. Not used for treatment switching.</div></div>
+          <div class="bm-divider"></div>
+          <div class="bm-decision">Baseline prognostication only — no treatment adaptation role</div>
+        </div>
+      </div>
+
+      <div class="bm-card">
+        <div class="bm-card-top">
+          <div class="bm-name">ctDNA / cfDNA</div>
+          <div class="bm-status bm-status-exploratory">Exploratory</div>
+        </div>
+        <div class="bm-card-body">
+          <div class="bm-divider"></div>
+          <div class="bm-row"><div class="bm-row-label">Assay</div><div class="bm-row-val">Liquid biopsy (NGS-based); not standardized</div></div>
+          <div class="bm-row"><div class="bm-row-label">Evidence</div><div class="bm-row-val">Early ctDNA dynamics predict later chemotherapy response. Serial cfDNA levels correlate with OS (PMID 41256319). Not yet actionable in clinic.</div></div>
+          <div class="bm-row"><div class="bm-row-label">Gap</div><div class="bm-row-val">No validated on-treatment resistance test. ~40–60% of advanced patients receive ineffective therapy before RECIST progression is confirmed.</div></div>
+          <div class="bm-divider"></div>
+          <div class="bm-decision">Research use only — not standard of care</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════ RESISTANCE ════════════════ -->
+<section class="section" id="resistance" style="background:var(--offb); padding-top:48px; padding-bottom:64px;">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Clinical challenge</p>
+      <h2 class="section-title">How Resistance is Recognized</h2>
+      <p class="section-sub">Resistance recognition in EAC is almost entirely retrospective and radiological. There is no validated on-treatment molecular resistance test in routine clinical use.</p>
+    </div>
+
+    <div class="resistance-grid">
+      <div class="card">
+        <div class="card-title">Neoadjuvant setting — the blind window</div>
+        <div class="card-body">Resistance is inferred from the resection specimen after the patient has already completed 3–4 months of pre-operative treatment. Mandard TRG 4–5 (virtually no regression) or Becker Grade 3 are assigned on the surgical specimen. By the time this is known, the treatment course is complete. Approximately 40–50% of patients have TRG 3–5. There is no established switch protocol for non-responders before surgery.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Metastatic setting — RECIST as the standard</div>
+        <div class="card-body">Resistance = radiological progression by RECIST 1.1 on CT, re-staged every 8–12 weeks. Symptomatic progression (worsening dysphagia, weight loss, pain) sometimes precedes scan confirmation but is not a formal switching criterion. Approximately 40–60% of patients treated with standard regimens do not respond — yet until imaging confirms progression, treatment continues. This means roughly half of advanced patients receive several cycles of ineffective therapy.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">PET-adapted approaches — not yet mainstream</div>
+        <div class="card-body">MUNICON/MUNICON-II trials tested early FDG-PET metabolic response (~2 weeks after first cycle) to identify non-responders and switch regimens. PERCIST was found to be a stronger predictor of outcomes than RECIST in esophageal cancer receiving neoadjuvant chemotherapy. However, PET-adaptation has not entered mainstream practice due to logistical complexity and unclear survival benefit from switching.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">ctDNA — promising but research stage</div>
+        <div class="card-body">Early ctDNA dynamics (cycle 1–2) predict later chemotherapy response and OS in small cohorts (PMID 41256319, PMID 40275077). Low baseline cfDNA or high T-cell repertoire richness correlates with longer OS in 2L (RAP trial). However, no cut-off is validated, no commercial assay is standardized for this indication, and no trial has used ctDNA to drive treatment switching in EAC.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">What clinicians currently do</div>
+        <div class="card-body">At progression in the metastatic setting: re-biopsy is recommended but infrequently done in practice — HER2 status and PD-L1 CPS can evolve. Switch to 2L (ramucirumab + paclitaxel). Beyond 2L: irinotecan-based regimens, trifluridine/tipiracil, or clinical trial. NCCN recommends molecular re-profiling at progression if clinically feasible, but this is aspirational rather than routine.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">The open gap</div>
+        <div class="card-body">There is no validated on-treatment marker — molecular, radiological, or blood-based — that reliably identifies a patient whose tumor is becoming resistant during neoadjuvant FLOT or CROSS, in time to change treatment before surgery. This is one of the most significant unmet clinical needs in EAC. Circulating tumor cells, ctDNA kinetics, and radiomics-based models are all under active investigation but none has reached clinical validation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════ FOOTER ════════════════════ -->
+<footer id="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-title">EAC Clinical Reference</div>
+        <p class="footer-sub">For research and clinical education use only. Not for direct patient care decisions. Information current to April 2026. Clinical guidelines change — always verify against current NCCN, ESMO, and published trial data.</p>
+      </div>
+      <div class="footer-sources">
+        <h4>Primary sources</h4>
+        <ul>
+          <li>ESOPEC — Hoeppner et al. NEJM 2025 (PMID 39842010)</li>
+          <li>ESMO Interim Update — Obermannová &amp; Leong, ESMO Open 2025 (PMID 39986705)</li>
+          <li>CROSS 10-yr — Eyck et al. JCO 2021 (PMID 33891478)</li>
+          <li>CheckMate 649 5-yr — Janjigian et al. Ann Oncol 2026 (PMID 41687718)</li>
+          <li>DANTE — Lorenzen et al. JCO 2024 (PMID 37963317)</li>
+          <li>MATTERHORN — Al-Batran et al. NEJM 2025 (PMID 39018031)</li>
+          <li>VESTIGE — Lordick et al. Ann Oncol 2025 (PMID 39542422)</li>
+          <li>SEER Cancer Stat Facts: Esophageal Cancer (seer.cancer.gov)</li>
+          <li>SEOM-SEAP Biomarker Consensus 2025 (PMC12399710)</li>
+          <li>NCCN v4.2025 Esophageal Cancer Guidelines</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═════════════════════════ TOOLTIP ════════════════════ -->
+<div class="tl-tooltip" id="tooltip"></div>
+
+<!-- ═════════════════════════ SCRIPTS ════════════════════ -->
+<script>
+// ── Navigation smooth scroll ──────────────────────────
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    const offset = 64;
+    const top = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+  // Update active nav button
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+// Scroll spy
+const sections = ['overview','staging','timeline','comparison','trials','biomarkers','resistance'];
+window.addEventListener('scroll', () => {
+  const y = window.scrollY + 80;
+  for (let i = sections.length - 1; i >= 0; i--) {
+    const el = document.getElementById(sections[i]);
+    if (el && el.offsetTop <= y) {
+      document.querySelectorAll('.nav-btn').forEach((b,j) => b.classList.toggle('active', j === i));
+      break;
+    }
+  }
+});
+
+// ── Stage switcher ────────────────────────────────────
+function setStage(id) {
+  document.querySelectorAll('.stage-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.stage-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ── Regimen tabs ──────────────────────────────────────
+function setRegimen(id) {
+  document.querySelectorAll('.reg-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.reg-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('reg-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ── Timeline tooltip ──────────────────────────────────
+const tooltip = document.getElementById('tooltip');
+let tt_open = false;
+
+document.addEventListener('mouseover', e => {
+  const block = e.target.closest('.tl-block');
+  if (!block) return;
+  const title = block.dataset.title || '';
+  const body  = block.dataset.body  || '';
+  const dose  = block.dataset.dose  || '';
+  const warn  = block.dataset.warn  || '';
+  tooltip.innerHTML =
+    `<strong>${title}</strong>${body}` +
+    (dose ? `<div class="dose">${dose}</div>` : '') +
+    (warn ? `<div class="warn">⚠ ${warn}</div>` : '');
+  tooltip.classList.add('visible');
+  tt_open = true;
+});
+
+document.addEventListener('mousemove', e => {
+  if (!tt_open) return;
+  let x = e.clientX + 16, y = e.clientY + 16;
+  const tw = tooltip.offsetWidth, th = tooltip.offsetHeight;
+  if (x + tw > window.innerWidth  - 12) x = e.clientX - tw - 10;
+  if (y + th > window.innerHeight - 12) y = e.clientY - th - 10;
+  tooltip.style.left = x + 'px';
+  tooltip.style.top  = y + 'px';
+});
+
+document.addEventListener('mouseout', e => {
+  const block = e.target.closest('.tl-block');
+  const to    = e.relatedTarget ? e.relatedTarget.closest('.tl-block') : null;
+  if (block && !to) {
+    tooltip.classList.remove('visible');
+    tt_open = false;
+  }
+});
+
+// ── Trial filter ──────────────────────────────────────
+function filterTrials(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.trials-table tbody tr').forEach(row => {
+    if (cat === 'all') { row.classList.remove('hidden'); return; }
+    const rowCat = row.dataset.cat || '';
+    row.classList.toggle('hidden', !rowCat.includes(cat));
+  });
+}
+</script>
+</body>
+</html>
